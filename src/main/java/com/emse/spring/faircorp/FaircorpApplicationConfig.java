@@ -13,7 +13,9 @@ public class FaircorpApplicationConfig {
 
     // 2
     @Bean
-    public CommandLineRunner greetingCommandLine(@Qualifier("consoleGreetingService")  GreetingService gsComponent) { // 3
+    @Autowired
+    // we can use Qualifier here instead of Primary
+    public CommandLineRunner greetingCommandLine(GreetingService gsComponent) { // 3
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
