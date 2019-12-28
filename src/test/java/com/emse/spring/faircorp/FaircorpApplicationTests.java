@@ -1,9 +1,13 @@
 package com.emse.spring.faircorp;
 
+import com.emse.spring.faircorp.dao.LightDao;
 import com.emse.spring.faircorp.hello.ConsoleGreetingService;
 import com.emse.spring.faircorp.hello.DummyUserService;
 import com.emse.spring.faircorp.hello.GreetingService;
+import com.emse.spring.faircorp.model.Status;
+import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -43,4 +47,6 @@ class FaircorpApplicationTests {
         dummyUserService.greetAll();
         Assertions.assertThat(output).contains("Hello, Elodie!", "Hello, Charles!");
     }
+
+
 }
