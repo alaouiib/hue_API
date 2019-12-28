@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 
 @CrossOrigin
 @RestController  // 1.
-@RequestMapping(value = "/api/lights", consumes = "application/json;text/plain;multipart/form-data") // 2. ,
+@RequestMapping(value = "/api/lights", consumes = "application/json;") // 2. ,
 @Transactional // 3.
 public class LightController {
 
@@ -71,7 +71,7 @@ public class LightController {
             JSONObject Body = new JSONObject(value);
 
 //            System.out.println(Body.get("status"));
-            
+
             String status = (String) Body.get("status");
             if (status.equals("ON")) {
                 System.out.println(status);
